@@ -16,3 +16,4 @@ jobs:
       with:
         branch: main
         folder: html
+        token: ${{ secrets.GITHUB_TOKEN }}
