@@ -14,6 +14,6 @@ jobs:
     - name: Publish to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
-        branch: main
-        folder: html
+        branch: gh_pages
+        folder: main
         token: ${{ secrets.GITHUB_TOKEN }}
