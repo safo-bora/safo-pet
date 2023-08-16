@@ -1,4 +1,4 @@
-name: Deploy own HTML with GitHub Actions
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,24 +6,13 @@ on:
       - main
 
 jobs:
-  run-script:
+  deploy:
     runs-on: ubuntu-latest
-    environment: github-pages
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Debug files
-      run: pwd && ls -la
-    - name: Publish HTML file
+
+    - name: Publish to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: main
-        folder: .
-    - name: Commit and push changes
-      uses: EndBug/add-and-commit@v7
-      with:
-        message: "Publish HTML file"
-        add: "."
+        folder: html
