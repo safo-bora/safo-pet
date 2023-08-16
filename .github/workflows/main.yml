@@ -1,4 +1,4 @@
-name: Run Python script
+name: Deploy own HTML with GitHub Actions
 
 on:
   push:
@@ -11,19 +11,19 @@ jobs:
     environment: github-pages
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Debug files
-      run: pwd && ls -la
+#    - name: Set up Python
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: '3.x'
+#    - name: Debug files
+#      run: pwd && ls -la
     - name: Publish HTML file
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: main
-        folder: .
+        folder: html
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v7
       with:
         message: "Publish HTML file"
-        add: "."
+        add: "html"
