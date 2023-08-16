@@ -3,34 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Changer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        #color-button {
-            padding: 15px 30px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Click the Button to Change the Background Color!</h1>
-    <button id="color-button" onclick="changeColor()">Change Color</button>
+    <title>Webcam Access</title>
+    <br>
     <script>
-        function changeColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
+        async function startCamera() {
+            const video = document.getElementById('video');
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error('Error accessing the webcam:', error);
             }
-            document.body.style.backgroundColor = color;
         }
     </script>
+</head>
+<body>
+    <h1>Accessing the Webcam</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <br>
+    <button onclick="startCamera()">Start Camera</button>
 </body>
 </html>
