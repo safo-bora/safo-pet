@@ -3,25 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webcam Access</title>
-    <br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
+    <title>Funny Webcam Party</title>
+</head>
+<body>
     <script>
-        async function startCamera() {
-            const video = document.getElementById('video');
+        let video;
+        let partyHat;
 
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                video.srcObject = stream;
-            } catch (error) {
-                console.error('Error accessing the webcam:', error);
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            video = createCapture(VIDEO);
+            video.size(width, height);
+            video.hide();
+
+            partyHat = loadImage('party_hat.png'); // Add your own path to a party hat image
+        }
+
+        function draw() {
+            image(video, 0, 0, width, height);
+            drawPartyHat();
+            drawConfetti();
+        }
+
+        function drawPartyHat() {
+            image(partyHat, mouseX - 100, mouseY - 200, 300, 300); // Draw the party hat at mouse location
+        }
+
+        function drawConfetti() {
+            for (let i = 0; i < 100; i++) {
+                let x = random(width);
+                let y = random(height);
+                let col = color(random(255), random(255), random(255));
+                fill(col);
+                noStroke();
+                ellipse(x, y, 5, 5);
             }
         }
     </script>
-</head>
-<body>
-    <h1>Accessing the Webcam</h1>
-    <video id="video" width="640" height="480" autoplay></video>
-    <br>
-    <button onclick="startCamera()">Start Camera</button>
 </body>
 </html>
