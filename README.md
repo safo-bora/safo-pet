@@ -1,5 +1,6 @@
 # How to Create a Website with Simple 5 Steps from Scratch by GitHub Pages
 This guide will walk you through creating and deploying a simple website using GitHub Pages.
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-0Bc-0zakeUHqmDPLKBeGaiBzL32w9DuDKPF597KLqmthi3dldu3pmKq8emq0ZTs-YN1YI9R1CV9royhDPsS_3xcR9my16DkjEAJ7IEH4mOzyDil_ZvaHuLO9PfkHsqQp9vi7mNq7T16nIIe_9nzme1YmRV7fL9W2aeLZkWgWbMiZdcSQsL-ocmXQngBp/s773/template%20(1).png" width="400" />
 
 ## Steps
 
@@ -20,7 +21,7 @@ Before you begin, make sure you have a GitHub account and a repository where you
 ### 3. Create GitHub Configuration File
 You'll need to create a configuration file to instruct GitHub Pages how to build your site. 
 Here's an example:
-https://github.com/safo-bora/safo-pet/blob/8af67421a75cf044635bf0330217c5f5f73871e3/.github/workflows/main.yml
+https://github.com/safo-bora/safo-pet/blob/main/.github/workflows/main.yml
 
 ### 4. Create HTML That You Want to Deploy
 Design and write the HTML code for the web pages you want to display. 
@@ -37,3 +38,6 @@ Now everyone can open and see your website!
 
 # Pet Project WebSite (Example):
 https://safo-bora.github.io/safo-pet/ 
+
+# Doc:
+https://safo-bora-katerina.blogspot.com/2023/08/how-to-create-website-with-simple-5.html

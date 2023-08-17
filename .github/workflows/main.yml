@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: pwd
-    - run: ls -la
     - name: Publish to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:

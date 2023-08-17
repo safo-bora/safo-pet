@@ -2,53 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
-    <title>Funny Webcam Party</title>
+    <title>How to Create a Website with Simple 5 Steps from Scratch by GitHub Pages</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        h2 {
+            color: #555;
+            font-size: 20px;
+        }
+        h3 {
+            color: #ad119b;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <script>
-        let video;
-        let partyHat;
-        let hatX = -100; // Initialize hat X position
-        let hatY = -100; // Initialize hat Y position
 
-        function setup() {
-            createCanvas(windowWidth, windowHeight);
-            video = createCapture(VIDEO);
-            video.size(width, height);
-            video.hide();
+<img src="party_hat.png" width="400" />
 
-            partyHat = loadImage('party_hat.png'); // Add your own path to a party hat image
-        }
+<h1>Congratulations! </h1>
+<h3>You've successfully created and deployed a website using GitHub Pages!</h3>
 
-        function draw() {
-            image(video, 0, 0, width, height);
-            drawPartyHat();
-            drawConfetti();
-        }
 
-        function drawPartyHat() {
-            image(partyHat, hatX - 100, hatY - 200, 300, 300); // Draw the party hat at stored location
-        }
-
-        function drawConfetti() {
-            for (let i = 0; i < 100; i++) {
-                let x = random(width);
-                let y = random(height);
-                let col = color(random(255), random(255), random(255));
-                fill(col);
-                noStroke();
-                ellipse(x, y, 5, 5);
-            }
-        }
-
-        function mousePressed() {
-            hatX = mouseX; // Store mouse X position
-            hatY = mouseY; // Store mouse Y position
-        }
-
-    </script>
 </body>
 </html>
