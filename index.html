@@ -11,6 +11,8 @@
     <script>
         let video;
         let partyHat;
+        let hatX = -100; // Initialize hat X position
+        let hatY = -100; // Initialize hat Y position
 
         function setup() {
             createCanvas(windowWidth, windowHeight);
@@ -28,7 +30,7 @@
         }
 
         function drawPartyHat() {
-            image(partyHat, mouseX - 100, mouseY - 200, 300, 300); // Draw the party hat at mouse location
+            image(partyHat, hatX - 100, hatY - 200, 300, 300); // Draw the party hat at stored location
         }
 
         function drawConfetti() {
@@ -41,6 +43,12 @@
                 ellipse(x, y, 5, 5);
             }
         }
+
+        function mousePressed() {
+            hatX = mouseX; // Store mouse X position
+            hatY = mouseY; // Store mouse Y position
+        }
+
     </script>
 </body>
 </html>
